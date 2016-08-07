@@ -822,6 +822,13 @@ void BrowserWindow::toggleShowStatusBar()
 
 }
 
+void BrowserWindow::showBookmarksToolbar(bool show)
+{
+    // Method for quick show/hiding of Bookmarks Toolbar
+    // Doesn't need updates and settings to be modified
+    m_bookmarksToolbar->setVisible(show);
+}
+
 void BrowserWindow::toggleShowBookmarksToolbar()
 {
     setUpdatesEnabled(false);
