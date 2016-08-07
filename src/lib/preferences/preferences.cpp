@@ -220,6 +220,7 @@ Preferences::Preferences(BrowserWindow* window, QWidget* parent)
     //APPEREANCE
     settings.beginGroup("Browser-View-Settings");
     ui->showStatusbar->setChecked(settings.value("showStatusBar", true).toBool());
+    ui->instantBookmarksToolbar->setChecked(settings.value("instantBookmarksToolbar", false).toBool());
     ui->showBookmarksToolbar->setChecked(settings.value("showBookmarksToolbar", true).toBool());
     ui->showNavigationToolbar->setChecked(settings.value("showNavigationToolbar", true).toBool());
     ui->showHome->setChecked(settings.value("showHomeButton", true).toBool());
@@ -939,6 +940,7 @@ void Preferences::saveSettings()
     //WINDOW
     settings.beginGroup("Browser-View-Settings");
     settings.setValue("showStatusBar", ui->showStatusbar->isChecked());
+    settings.setValue("instantBookmarksToolbar", ui->instantBookmarksToolbar->isChecked());
     settings.setValue("showBookmarksToolbar", ui->showBookmarksToolbar->isChecked());
     settings.setValue("showNavigationToolbar", ui->showNavigationToolbar->isChecked());
     settings.setValue("showHomeButton", ui->showHome->isChecked());

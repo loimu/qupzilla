@@ -140,8 +140,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>582</width>
-        <height>489</height>
+        <width>590</width>
+        <height>490</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -163,7 +163,7 @@
           <enum>Qt::NoFocus</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="generalPage">
           <layout class="QGridLayout" name="gridLayout_6">
@@ -503,7 +503,7 @@
            <item row="0" column="0">
             <widget class="QTabWidget" name="tabWidget_2">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="tab_5">
               <attribute name="title">
@@ -591,6 +591,13 @@
                    </property>
                   </widget>
                  </item>
+                 <item row="3" column="0">
+                  <widget class="QCheckBox" name="instantBookmarksToolbar">
+                   <property name="text">
+                    <string>Enable instant Bookmarks ToolBar</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </item>
                <item row="2" column="0" colspan="2">
@@ -673,7 +680,7 @@
            <item row="0" column="0">
             <widget class="QTabWidget" name="tabWidget_3">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="tabsBehaviourPage">
               <attribute name="title">

@@ -826,11 +826,13 @@ void BrowserWindow::showBookmarksToolbar(bool show)
 {
     // Method for quick show/hiding of Bookmarks Toolbar
     // Doesn't need updates and settings to be modified
+    // TODO: animate showing/hiding for better look
 
-    if(Settings().value("Browser-View-Settings/showBookmarksToolbar").toBool())
-        return;
-
-    m_bookmarksToolbar->setVisible(show);
+    if (!Settings().value("Browser-View-Settings/showBookmarksToolbar").toBool()
+        && Settings().value("Browser-View-Settings/instantBookmarksToolbar").toBool()
+    ) {
+        m_bookmarksToolbar->setVisible(show);
+    }
 }
 
 void BrowserWindow::toggleShowBookmarksToolbar()
