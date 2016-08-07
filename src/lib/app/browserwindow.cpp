@@ -826,6 +826,10 @@ void BrowserWindow::showBookmarksToolbar(bool show)
 {
     // Method for quick show/hiding of Bookmarks Toolbar
     // Doesn't need updates and settings to be modified
+
+    if(Settings().value("Browser-View-Settings/showBookmarksToolbar").toBool())
+        return;
+
     m_bookmarksToolbar->setVisible(show);
 }
 
