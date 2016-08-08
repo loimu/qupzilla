@@ -220,8 +220,13 @@ Preferences::Preferences(BrowserWindow* window, QWidget* parent)
     //APPEREANCE
     settings.beginGroup("Browser-View-Settings");
     ui->showStatusbar->setChecked(settings.value("showStatusBar", true).toBool());
+    // NOTE: instantBookmarksToolbar and showBookmarksToolbar cannot be both the same at the same time
     ui->instantBookmarksToolbar->setChecked(settings.value("instantBookmarksToolbar", false).toBool());
     ui->showBookmarksToolbar->setChecked(settings.value("showBookmarksToolbar", true).toBool());
+    ui->instantBookmarksToolbar->setDisabled(settings.value("showBookmarksToolbar").toBool());
+    ui->showBookmarksToolbar->setDisabled(settings.value("instantBookmarksToolbar").toBool());
+    connect(ui->instantBookmarksToolbar, SIGNAL(toggled(bool)), ui->showBookmarksToolbar, SLOT(setDisabled(bool)));
+    connect(ui->showBookmarksToolbar, SIGNAL(toggled(bool)), ui->instantBookmarksToolbar, SLOT(setDisabled(bool)));
     ui->showNavigationToolbar->setChecked(settings.value("showNavigationToolbar", true).toBool());
     ui->showHome->setChecked(settings.value("showHomeButton", true).toBool());
     ui->showBackForward->setChecked(settings.value("showBackForwardButtons", true).toBool());

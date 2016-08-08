@@ -828,9 +828,7 @@ void BrowserWindow::showBookmarksToolbar(bool show)
     // Doesn't need updates and settings to be modified
     // TODO: animate showing/hiding for better look
 
-    if (!Settings().value("Browser-View-Settings/showBookmarksToolbar").toBool()
-        && Settings().value("Browser-View-Settings/instantBookmarksToolbar").toBool()
-    ) {
+    if (Settings().value("Browser-View-Settings/instantBookmarksToolbar").toBool()) {
         m_bookmarksToolbar->setVisible(show);
     }
 }
@@ -844,6 +842,7 @@ void BrowserWindow::toggleShowBookmarksToolbar()
     setUpdatesEnabled(true);
 
     Settings().setValue("Browser-View-Settings/showBookmarksToolbar", m_bookmarksToolbar->isVisible());
+    Settings().setValue("Browser-View-Settings/instantBookmarksToolbar", false);
 }
 
 void BrowserWindow::toggleShowNavigationToolbar()
